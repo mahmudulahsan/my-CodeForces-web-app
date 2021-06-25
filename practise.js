@@ -4,6 +4,8 @@ var press = document.querySelector('#press');
 
 press.addEventListener('click', ()=>{
     var search = document.querySelector('#text').value;
+    if(search=="") alert('Please Enter Valid Input');
+
     search = search.toUpperCase();
     fetch('https://codeforces.com/api/problemset.problems?tags=')
     .then(res => res.json())
