@@ -1,1 +1,3 @@
-# CF-Handle-Finder
+My Codeforces
+
+https://mycodeforces.netlify.app/mystats.htm
