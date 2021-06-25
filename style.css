@@ -56,4 +56,24 @@ a:hover{
     padding-top: 10px;
  }
 
+ .footer {
+    /* position: relative; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    opacity: .3;
+ }
+
+ #home-title{
+     font-size: 80px;
+     font-family: 'Rajdhani', sans-serif;
+     font-weight: bold;
+ }
+
+ .home-para{
+     font-size: 25px ;
+ }
 
