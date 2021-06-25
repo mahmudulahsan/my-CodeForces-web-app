@@ -76,4 +76,7 @@ a:hover{
  .home-para{
      font-size: 25px ;
  }
-
+ 
+ .my-link:hover{
+    opacity: .5;
+ }
