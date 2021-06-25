@@ -75,7 +75,7 @@ a:hover{
 
  @media only screen and (max-width: 600px) {
     #home-title {
-      font-size: 40px;
+      font-size: 50px;
     }
   }
 
@@ -85,8 +85,7 @@ a:hover{
 
  @media only screen and (max-width: 600px) {
     .home-para {
-      font-size: 12.5px !important;
-      padding-top: 0;
+      font-size: 20px;
     }
   }
  
