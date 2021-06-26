@@ -53,15 +53,32 @@
 
     <div class="container">
         <h3>Practise Problems</h3>
-        <p>Type A/B/C/D/E/F/G to get 100 problems from the last 100 contests.</p>
-        <!-- <select onchange="fun(this)" style="border: 0; border-radius: 10%; background-color: #343a40; color: white; height: 35px; width: 50px;">
+        <p>Select A/B/C/D/E/F/G to get 100 problems from the last 100 contests.</p>
+        <select class="sel" onchange="fun(this)" style="border: 0; border-radius: 10%; background-color: #343a40; color: white; height: 35px; width: 50px;">
             <option id="apple">A</option>
-            <option id="ball">B</option>
-            <option id="cat">C</option>
+            <option id="ball">B1</option>
+            <option id="dog">C</option>
+            <option id="cat">C1</option>
+            <option id="cat">C2</option>
             <option id="dog">D</option>
-          </select><br><br> -->
+            <option id="dog">D1</option>
+            <option id="dog">D1</option>
+            <option id="dog">E</option>
+            <option id="dog">E1</option>
+            <option id="dog">E2</option>
+            <option id="dog">F</option>
+            <option id="dog">G</option>
+            <option id="dog">H</option>
+            <option id="dog">I</option>
+            <option id="dog">J</option>
+            <option id="dog">K</option>
+            <option id="dog">L</option>
+            <option id="dog">M</option>
+            <option id="dog">N</option>
 
-          <input id="text" type="text" placeholder="A/B/C/D/E/F/G" style="border: 0; height: 35px;">
+          </select><br><br>
+
+          <!-- <input id="text" type="text" placeholder="A/B/C/D/E/F/G" style="border: 0; height: 35px;"> -->
 
           <button type="button" class="btn btn-primary" id="press">Get Problems</button>
     </div>
@@ -74,12 +91,21 @@
                 <th class="text-white">#</th>
                 <th class="text-white">Problem Name</th>
                 <th class="text-white">Rating</th>
+                <th class="text-white">Tags</th>
                 <th class="text-white">Problem Link</th>
             </tr>
             <tbody class="bg-light" id="myTable">
 
             </tbody>
         </table>
+
+        <style>
+          @media only screen and (max-width: 600px) {
+            table {
+              max-width: 50px !important;
+            }
+          }
+        </style>
     </div>
 
 
