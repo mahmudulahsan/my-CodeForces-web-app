@@ -2,7 +2,6 @@ var form = document.querySelector('#myForm');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    // document.querySelector('.myTable').clear();
 
     // const loadText ="wait a little bit ⌛";
     // document.querySelector('#propic').innerHTML = loadText;

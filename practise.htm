@@ -51,66 +51,157 @@
 
     <br> 
 
+
+    <!-- navbar and pill
+     -->
     <div class="container">
+      <main>
+          <!-- toggleable dynamic tab starts here -->
+          <div class="other-section">
+              <ul class="nav nav-pills">
+                  <li class="nav-item"><a data-toggle="pill" class="nav-link active font-weight-bold" href="#section_1">Section 1</a></li>
+                  <li class="nav-item"><a data-toggle="pill" class="nav-link font-weight-bold" href="#section_2">Section 2</a></li>
+                  <!-- <li class="nav-item"><a data-toggle="pill" class="nav-link font-weight-bold" href="#section_3">Section 3</a></li> -->
+              </ul>
 
-        <h3>Practise Problems</h3>
-        <p>Select A/B/C/D/E/F/G to get 100 problems from the last 100 contests.</p>
-        <select class="sel" style="border: 0; border-radius: 10%; background-color: #343a40; color: white; height: 35px; width: 65px;">
-            <option value="" disabled selected>Select</option>
-            <option id="apple">A</option>
-            <option id="ball">B</option>
-            <option id="ball">B1</option>
-            <option id="ball">B2</option>
-            <option id="dog">C</option>
-            <option id="cat">C1</option>
-            <option id="cat">C2</option>
-            <option id="dog">D</option>
-            <option id="dog">D1</option>
-            <option id="dog">D1</option>
-            <option id="dog">E</option>
-            <option id="dog">E1</option>
-            <option id="dog">E2</option>
-            <option id="dog">F</option>
-            <option id="dog">G</option>
-            <option id="dog">H</option>
-            <option id="dog">I</option>
-            <option id="dog">J</option>
-            <option id="dog">K</option>
-            <option id="dog">L</option>
-            <option id="dog">M</option>
-            <option id="dog">N</option>
+              <style>
+                .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+                color: #fff !important;
+                background-color: #163457;
+                }
+                .nav-pills .nav-link.active, .nav-pills .show>.nav-link:hover {
+                  color: white !important;
+                }
+              </style>
 
-          </select><br><br>
+              <div class="tab-content">
+
+                <!-- section 1 -->
+
+                <hr style="height: 2px; opacity: .5; background: #343a40;">
+
+                  <div id="section_1" class="tab-pane active">
+                    <p>
+                      <div class="container">
+                        <br>
+                        <h3>Practise Problems</h3>
+                        <p>Select A/B/C/D/E/F/G to get 100 problems from the last 100 contests.</p>
+                        <select class="sel" style="border: 0; border-radius: 10%; background-color: #343a40; color: white; height: 35px; width: 65px;">
+                            <option value="" disabled selected>Select</option>
+                            <option id="apple">A</option>
+                            <option id="ball">B</option>
+                            <option id="ball">B1</option>
+                            <option id="ball">B2</option>
+                            <option id="dog">C</option>
+                            <option id="cat">C1</option>
+                            <option id="cat">C2</option>
+                            <option id="dog">D</option>
+                            <option id="dog">D1</option>
+                            <option id="dog">D1</option>
+                            <option id="dog">E</option>
+                            <option id="dog">E1</option>
+                            <option id="dog">E2</option>
+                            <option id="dog">F</option>
+                            <option id="dog">G</option>
+                            <option id="dog">H</option>
+                            <option id="dog">I</option>
+                            <option id="dog">J</option>
+                            <option id="dog">K</option>
+                            <option id="dog">L</option>
+                            <option id="dog">M</option>
+                            <option id="dog">N</option>              
+                          </select><br><br>
+                          <!-- <input id="handle" type="text" placeholder="Handle" style="border: 0; height: 35px;"><br><br> -->
+                
+                          <button type="button" class="btn btn-success" id="press">Get Problems</button>
+                    </div>
+                
+                    <br><br>
+                    <div class="container">
+                        <h3>Lists</h3>
+                
+                        <div class="table-responsive">
+                          <table class="table table-stripped table-bordered w-100">
+                            <tr class="bg-dark !important">
+                                <th class="text-white">#</th>
+                                <th class="text-white">Problem Name</th>
+                                <th class="text-white">Rating</th>
+                                <th class="text-white">Tags</th>
+                                <th class="text-white">Problem Link</th>
+                            </tr>
+                            <tbody class="bg-light" id="myTable">
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+                    </p>
+                  
+                  </div>
 
 
 
-          <!-- <input id="handle" type="text" placeholder="Handle" style="border: 0; height: 35px;"><br><br> -->
-
-          <button type="button" class="btn btn-primary" id="press">Get Problems</button>
-    </div>
-
-    <br><br>
-    <div class="container">
-        <h3>Lists</h3>
-
-        <div class="table-responsive">
-          <table class="table table-stripped table-bordered w-100">
-            <tr class="bg-dark !important">
-                <th class="text-white">#</th>
-                <th class="text-white">Problem Name</th>
-                <th class="text-white">Rating</th>
-                <th class="text-white">Tags</th>
-                <th class="text-white">Problem Link</th>
-            </tr>
-            <tbody class="bg-light" id="myTable">
-
-            </tbody>
-        </table>
-        </div>
+                  <!-- section 2  -->
 
 
+                  <div id="section_2" class="tab-pane fade">
+                    <br>
+                      <div class="container">
+                        <h3>Type lower to higher rating:</h3><br><br>
 
-    </div>
+
+                          <input value="" type="number" class="form-control" placeholder="From-" id="lo" style="background-color: #8f9186;" required><br>
+                          <input value="" type="number" class="form-control" placeholder="To-" id="hi" style="background-color: #8f9186;" required><br>
+
+                          <button type="button" class="btn btn-success" id="get">Get Problems</button>
+                          <br><br>
+                        <h3>Lists</h3>
+                        <div class="table-responsive">
+                            <table class="table table-stripped table-bordered w-100 table1">
+                                <tr class="bg-dark !important">
+                                  <th class="text-white">#</th>
+                                  <th class="text-white">Problem Name</th>
+                                  <th class="text-white">Rating</th>
+                                  <th class="text-white">Tags</th>
+                                  <th class="text-white">Problem Link</th>
+                                </tr>
+                                <tbody class="bg-light" id="myTable1">
+                                </tbody>
+                            </table>
+                        </div>     
+                  </div>
+
+
+
+                  <div id="section_3" class="tab-pane fade">
+                    <p>
+                      3
+                    </p>
+                  </div>
+              </div>
+          </div>
+          <!-- toggleable dynamic tab ends here -->
+      </main>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -121,9 +212,19 @@
       <p>Developed by © <a href="https://mahmudulahsan.github.io/Portfolio/" target="_blank" style="color: white !important;"> Mahmudul Ahsan</a></p>
   </div>
 
+
+
+    <!-- bootstrap js, jquery, popper -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <script src="practise.js"></script>
+    <script src="practise1.js"></script>
 </body>
 </html>
