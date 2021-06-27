@@ -1,6 +1,6 @@
 
 
-    fetch('https://codeforces.com/api/contest.list?=true')
+    fetch('https://codeforces.com/api/contest.list?gym=false')
     .then(res => res.json())
     .then(data => {
      // console.log(data.result.length);

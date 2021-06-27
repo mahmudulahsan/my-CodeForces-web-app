@@ -1,22 +1,22 @@
-
 var press = document.querySelector('#press');
+var handle = document.querySelector('#handle').value;
+
+
 
 press.addEventListener('click', ()=>{
-    // var search = document.querySelector('#text').value;
     var search = document.querySelector('.sel').value;
     if(search=="") alert('Please Enter Valid Input');
 
     search = search.toUpperCase();
-    fetch('https://codeforces.com/api/problemset.problems?tags=')
+    fetch('https://codeforces.com/api/problemset.problems')
     .then(res => res.json())
     .then(data =>{
         var arr = data.result.problems;
-        // console.log(arr[0].index);
         function buildTable(arr){
             var table = document.querySelector('#myTable');
 
-            var c = 1;
-            
+            var c = 1;         
+
             for(var i = 0; i<1000; i++){
                 if(arr[i].index==search){
                     var row =`
