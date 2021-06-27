@@ -1,11 +1,8 @@
 var press = document.querySelector('#press');
-var handle = document.querySelector('#handle').value;
-
 
 
 press.addEventListener('click', ()=>{
     var search = document.querySelector('.sel').value;
-    if(search=="") alert('Please Enter Valid Input');
 
     search = search.toUpperCase();
     fetch('https://codeforces.com/api/problemset.problems')
