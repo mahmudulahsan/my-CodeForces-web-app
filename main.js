@@ -11,6 +11,7 @@ form.addEventListener('submit', (e) => {
     fetch('https://codeforces.com/api/user.info?handles='+search)
     .then(res => res.json())
     .then(data => {
+        console.log(data.result.lastName);
         // console.log(data)
         
         document.querySelector('#propic').innerHTML = `
