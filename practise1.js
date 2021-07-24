@@ -18,7 +18,7 @@ get.addEventListener('click', (e) => {
     
                 for(var i = 0; i<arr.length; i++){
                     if(arr[i].rating>=lo && arr[i].rating<=hi){
-                        // console.log("mahi");   
+                          
                         var row =`
                         <tr>
                             <td class="bg-dark text-white">${c}</td>
