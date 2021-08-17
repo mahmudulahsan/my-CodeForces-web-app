@@ -9,8 +9,11 @@ press.addEventListener('click', ()=>{
     .then(res => res.json())
     .then(data =>{
         var arr = data.result.problems;
+
+        let output = [];
+        var table = document.querySelector('#myTable');
+
         function buildTable(arr){
-            var table = document.querySelector('#myTable');
 
             var c = 1;         
 
@@ -25,14 +28,15 @@ press.addEventListener('click', ()=>{
                         <td class="bg-info text-white"><a target="_blank" href="https://codeforces.com/problemset/problem/${arr[i].contestId}/${search}">Link</a></td>
                     </tr>
                     `
-                      table.innerHTML +=row;
+                    // table.innerHTML +=row;
+                    output.push(row);
                       c++;
                       if(c>100) break;
                   }
                 }
                }
                buildTable(arr);
+               console.log("mahi")
+               table.innerHTML = output.join(' ');
     })
 })
-
-

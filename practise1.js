@@ -10,13 +10,16 @@ get.addEventListener('click', (e) => {
     fetch('https://codeforces.com/api/problemset.problems?')
     .then(res => res.json())
     .then(data => {
+
             var arr = data.result.problems;
+            var table = document.querySelector('#myTable1');
+            var output = [];
+
             function buildTable(arr){
-                var table = document.querySelector('#myTable1');
+                var c = 1;  
+                var len = arr.length;                   
     
-                var c = 1;                     
-    
-                for(var i = 0; i<arr.length; i++){
+                for(var i = 0; i<len; i++){
                     if(arr[i].rating>=lo && arr[i].rating<=hi){
                           
                         var row =`
@@ -28,13 +31,16 @@ get.addEventListener('click', (e) => {
                             <td class="bg-info text-white"><a target="_blank" href="https://codeforces.com/problemset/problem/${arr[i].contestId}/${arr[i].index}">Link</a></td>
                         </tr>
                         `
-                          table.innerHTML +=row;
+                          // table.innerHTML +=row;
+                          output.push(row);
                           c++;
                         //   if(c>100) break;
                       }
                     }
                    }
                    buildTable(arr);
+                   console.log("mahi");
+                   table.innerHTML = output.join(' ')
     })
 })
 
