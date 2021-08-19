@@ -87,7 +87,9 @@ form.addEventListener('submit', (e) => {
              <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
               `
         }
+
         // contest table
+
         fetch('https://codeforces.com/api/user.rating?handle='+search)
         .then(res => res.json())
         .then(data => {
@@ -95,9 +97,10 @@ form.addEventListener('submit', (e) => {
         
             var arr = data.result;
             arr[-1]=1500;
+            var table = document.querySelector('#myTable');
+            var output = [];
         
             function buildTable(arr){
-                var table = document.querySelector('#myTable');
                 
                 for(var i = arr.length-1; i>=0; i--){
                     var chng = arr[i].newRating-arr[i-1].newRating;
@@ -127,11 +130,13 @@ form.addEventListener('submit', (e) => {
                     `
                     }
         
-                    table.innerHTML +=row;
+                    // table.innerHTML +=row;
+                    output.push(row);
                 }
             }
         
             buildTable(arr);
+            table.innerHTML = output.join(' ');
         })
 
     })
