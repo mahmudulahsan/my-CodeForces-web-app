@@ -18,19 +18,19 @@ form.addEventListener('submit', (e) => {
             <img src="${data.result[0].titlePhoto}"/>
         `
         document.querySelector('#about').innerHTML = `
-        <p> <b>Name :</b> ${data.result[0].firstName} ${data.result[0].lastName} </p>
-        <p> <b>Address :</b> ${data.result[0].city}, ${data.result[0].country} </p>
-        <p> <b>Friends of :</b> ${data.result[0].friendOfCount}</p>
-        <p> <b>Institution :</b> ${data.result[0].organization}</p>
+        <p> <b><u>Name</u> :</b> ${data.result[0].firstName} ${data.result[0].lastName} </p>
+        <p> <b><u>Address</u> :</b> ${data.result[0].city}, ${data.result[0].country} </p>
+        <p> <b><u>Friends of</u> :</b> ${data.result[0].friendOfCount}</p>
+        <p> <b><u>Institution</u> :</b> ${data.result[0].organization}</p>
         `
         var rat = data.result[0].rating;
         var maxRat = data.result[0].maxRating;
         console.log(rat);
         if(rat<=1199){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b>Rating : <span style="color: #444444">${rat}</span></b> , Newbie</p>
-             <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
-             <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
+            `<p> <b><u>Rating</u> : <span style="color: #444444">${rat}</span></b> , Newbie</p>
+             <p> <b><u>Max Rating</u> : <span style="color: black">${maxRat}</span></b></p>
+             <p><u>Profile Link</u>: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
              `
         } else if(rat>=1200 && rat<=1399){
             document.querySelector('#rat').innerHTML = 
