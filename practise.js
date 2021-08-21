@@ -1,5 +1,6 @@
 var press = document.querySelector('#press');
 var bound;
+var solve_cnt = document.querySelector('#solve-count-1');
 
 press.addEventListener('click', ()=>{
 
@@ -31,7 +32,8 @@ press.addEventListener('click', ()=>{
         var table = document.querySelector('#myTable');
 
         function buildTable(arr){
-            var c = 1;         
+            var c = 1;
+            var s = 0;         
             for(var i = 0; i<1000; i++){
                 if(arr[i].index == search){
                     var ans = 0;
@@ -44,6 +46,7 @@ press.addEventListener('click', ()=>{
                     }
             
                     if(ans == 1){
+                        s++;
                         var row =`
                     <tr>
                         <td class="bg-dark text-white">${c}</td>
@@ -65,13 +68,13 @@ press.addEventListener('click', ()=>{
                     </tr>
                     `
                     }
-                    
                     // table.innerHTML +=row;
                     output.push(row);
-                      c++;
-                      if(c>100) break;
+                    c++;
+                    if(c>100) break;
                   }
                 }
+                solve_cnt.innerHTML = s;
                }
                buildTable(arr);
                console.log("mahi")

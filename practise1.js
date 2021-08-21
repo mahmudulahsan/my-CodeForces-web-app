@@ -1,6 +1,6 @@
-
 var bound;
 var get = document.querySelector('#get');
+var solve_count = document.querySelector('#solve-count-2');
 
 get.addEventListener('click', (e) => {
 
@@ -21,7 +21,8 @@ get.addEventListener('click', (e) => {
         for(var i = 0; i < len; i++){
             if(solve[i].verdict=="OK")
                 problist.push(solve[i].problem.name);
-        }    
+        }
+            
     })
 
 
@@ -33,6 +34,7 @@ get.addEventListener('click', (e) => {
             var arr = data.result.problems;
             var table = document.querySelector('#myTable1');
             var output = [];
+            var s = 0;
 
             function buildTable(arr){
                 var c = 1;  
@@ -47,9 +49,9 @@ get.addEventListener('click', (e) => {
                             ans = 1;
                             break;
                         }
-                    }
-                          
+                    }               
                     if(ans == 1){
+                        s++;
                         var row =`
                     <tr>
                         <td class="bg-dark text-white">${c}</td>
@@ -71,12 +73,13 @@ get.addEventListener('click', (e) => {
                     </tr>
                     `
                     }
-                          // table.innerHTML +=row;
-                          output.push(row);
-                          c++;
-                        //   if(c>100) break;
-                      }
+                    // table.innerHTML +=row;
+                    output.push(row);
+                    c++;
+                    // if(c>100) break;
+                    }
                 }
+                solve_count.innerHTML = s;
               }
               buildTable(arr);
               console.log("mahi");
