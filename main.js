@@ -28,9 +28,9 @@ form.addEventListener('submit', (e) => {
         console.log(rat);
         if(rat<=1199){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b><u>Rating</u> : <span style="color: #444444">${rat}</span></b> , Newbie</p>
-             <p> <b><u>Max Rating</u> : <span style="color: black">${maxRat}</span></b></p>
-             <p><u>Profile Link</u>: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
+            `<p> <b>Rating : <span style="color: #444444">${rat}</span></b> , Newbie</p>
+             <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
+             <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
              `
         } else if(rat>=1200 && rat<=1399){
             document.querySelector('#rat').innerHTML = 
