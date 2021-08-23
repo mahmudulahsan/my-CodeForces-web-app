@@ -1,5 +1,7 @@
 var form = document.querySelector('#myForm');
 
+var ac = 0, tle = 0, rte = 0, wa = 0;
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -161,7 +163,7 @@ form.addEventListener('submit', (e) => {
     .then(res => res.json())
     .then(data => {
         var l = data.result.length;
-        var ac = 0, tle = 0, rte = 0, wa = 0;
+        
         for(let i = 0; i<l ; i++){
             if(data.result[i].verdict === "OK")
                 ac++;
@@ -203,11 +205,37 @@ form.addEventListener('submit', (e) => {
             </li>
         </ul>
         `
+    // Chart
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
 
-    })
+    function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Accepted',    ac],
+        ['Wrong Answer',   wa],
+        ['Time Limit Exceeded',  tle],
+        ['Run Time Error',     rte]
+
+    ]);
+
+    var options = {
+        title: 'Summary'
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+    chart.draw(data, options);
+    }
+    
+
+    })  
 })
 
 
+
+ 
 
 
 
