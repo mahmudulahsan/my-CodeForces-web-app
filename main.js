@@ -212,11 +212,11 @@ form.addEventListener('submit', (e) => {
     function drawChart() {
 
     var data = google.visualization.arrayToDataTable([
-        ['Task', 'Hours per Day'],
-        ['Accepted',    ac],
-        ['Wrong Answer',   wa],
-        ['Time Limit Exceeded',  tle],
-        ['Run Time Error',     rte]
+        ['Category', 'percentage'],
+        ['AC',   ac],
+        ['WA',   wa],
+        ['TLE',  tle],
+        ['RTE',  rte]
 
     ]);
 
@@ -228,6 +228,10 @@ form.addEventListener('submit', (e) => {
 
     chart.draw(data, options);
     }
+
+    $(window).resize(function(){
+        drawChart();
+    })
     
 
     })  
