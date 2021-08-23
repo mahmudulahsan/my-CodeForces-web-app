@@ -232,7 +232,6 @@ form.addEventListener('submit', (e) => {
     $(window).resize(function(){
         drawChart();
     })
-    
 
     })  
 })
