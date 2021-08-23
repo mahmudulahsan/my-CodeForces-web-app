@@ -29,6 +29,7 @@ press.addEventListener('click', ()=>{
     .then(res => res.json())
     .then(data =>{
         var arr = data.result.problems;
+        var arr_len = data.result.problems.length;
 
         let output = [];
         var table = document.querySelector('#myTable');
@@ -36,7 +37,7 @@ press.addEventListener('click', ()=>{
         function buildTable(arr){
             var c = 1;
             var s = 0;         
-            for(var i = 0; i<1000; i++){
+            for(var i = 0; i<arr_len; i++){
                 if(arr[i].index == search){
                     var ans = 0;
                     
@@ -73,7 +74,7 @@ press.addEventListener('click', ()=>{
                     // table.innerHTML +=row;
                     output.push(row);
                     c++;
-                    if(c>100) break;
+                    // if(c>100) break;
                   }
                 }
                 solve_cnt.innerHTML = s;

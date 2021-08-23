@@ -181,27 +181,27 @@ form.addEventListener('submit', (e) => {
 
         document.querySelector('.submission').innerHTML = `
         <ul class="list-group">
-                    <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
-                        <b class="">Total SUBs :</b>  
-                        <span class="badge badge-primary badge-pill"><strong class="ts">${l}</strong></span>
-                      </li>
-                    <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
-                        <b class="">ACs :</b>  
-                      <span class="badge badge-success badge-pill"><strong class="ac">${ac}</strong></span>
-                    </li>
-                    <li class="list-group-item list-group-item-warning d-flex justify-content-between align-items-center">
-                        <b class="">TLEs :</b>
-                      <span class="badge badge-warning badge-pill"><strong class="tle">${tle}</strong></span>
-                    </li>
-                    <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-                        <b class="">RTEs :</b>
-                      <span class="badge badge-secondary badge-pill"><strong class="rte">${rte}</strong></span>
-                    </li>
-                    <li class="list-group-item list-group-item-danger d-flex justify-content-between align-items-center">
-                        <b class="">WAs :</b>
-                      <span class="badge badge-danger badge-pill"><strong class="wa">${wa}</strong></span>
-                    </li>
-                  </ul>
+            <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+                <b class="">Total SUBs :</b>  
+                <span class="badge badge-primary badge-pill"><strong class="ts">${l}</strong></span>
+            </li>
+            <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
+                <b class="">ACs :</b>  
+                <span class="badge badge-success badge-pill"><strong class="ac">${ac}</strong></span>
+            </li>
+            <li class="list-group-item list-group-item-warning d-flex justify-content-between align-items-center">
+                <b class="">TLEs :</b>
+                <span class="badge badge-warning badge-pill"><strong class="tle">${tle}</strong></span>
+            </li>
+            <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+                <b class="">RTEs :</b>
+                <span class="badge badge-secondary badge-pill"><strong class="rte">${rte}</strong></span>
+            </li>
+            <li class="list-group-item list-group-item-danger d-flex justify-content-between align-items-center">
+                <b class="">WAs :</b>
+                <span class="badge badge-danger badge-pill"><strong class="wa">${wa}</strong></span>
+            </li>
+        </ul>
         `
 
     })
