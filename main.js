@@ -1,21 +1,30 @@
 var form = document.querySelector('#myForm');
+var search;
+var newSearch = 0;
 
 var ac = 0, tle = 0, rte = 0, wa = 0;
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // const loadText ="wait a little bit ⌛";
-    // document.querySelector('#propic').innerHTML = loadText;
+    const loadText ="wait a little bit ⌛";
+    document.querySelector('#propic').innerHTML = loadText;
 
-    var search = document.querySelector('#search').value;
+    search = document.querySelector('#search').value;
+
+    // if(search){
+    //     localStorage.setItem("username", search);
+
+    //     document.querySelector('.mahi').innerHTML += `
+    //     <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="newSearch" style="background-color: #8f9186;" readonly>
+    //     `
+    //     newSearch = 1;
+    //     // localStorage.getItem
+    // }
 
     fetch('https://codeforces.com/api/user.info?handles='+search)
     .then(res => res.json())
     .then(data => {
-        console.log(data.result.lastName);
-        // console.log(data)
-        
         document.querySelector('#propic').innerHTML = `
             <img src="${data.result[0].titlePhoto}"/>
         `
@@ -27,64 +36,64 @@ form.addEventListener('submit', (e) => {
         `
         var rat = data.result[0].rating;
         var maxRat = data.result[0].maxRating;
-        console.log(rat);
+        
         if(rat<=1199){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b>Rating : <span style="color: #444444">${rat}</span></b> , Newbie</p>
+            `<p>Rating : <b class="text-white bg-secondary"> ${rat}</b> , Newbie</p>
              <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
              <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
              `
         } else if(rat>=1200 && rat<=1399){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b>Rating : <span style="color: #006400">${rat}</span></b> , Pupil</p>
+            `<p>Rating : <b class="text-white bg-success"> ${rat}</b> , Pupil</p>
             <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
             <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
             `
         } else if(rat>=1400 && rat<=1599){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b>Rating : <span style="color: #90e0ef">${rat}</span></b> , Specialist</p>
+            `<p>Rating : <b class="text-white bg-info"> ${rat}</b> , Specialist</p>
             <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
              <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
             `
         } else if(rat>=1600 && rat<=1899){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b>Rating : <span style="color: #03045e">${rat}</span></b> , Expert</p>
+            `<p>Rating : <b class="text-white bg-primary"> ${rat}</b> , Expert</p>
             <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
              <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
               `
         } else if(rat>=1900 && rat<=2099){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b>Rating : <span style="color: #3c096c">${rat}</span></b> , Candidate Master</p>
+            `<p>Rating : <b style="background-color: #563d7c"> ${rat}</b> , Candidate Master</p>
             <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
              <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
               `
         } else if(rat>=2100 && rat<=2299){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b>Rating : <span style="color: #ff4800">${rat}</span></b> , Master</p>
+            `<p>Rating : <b class="text-white bg-warning"> ${rat}</b> , Master</p>
             <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
              <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
               `
         } else if(rat>=2300 && rat<=2399){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b>Rating : <span style="color: #ff4800">${rat}</span></b> , International Master</p>
+            `<p>Rating : <b class="text-white bg-warning"> ${rat}</b> , International Master</p>
             <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
              <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
               `
         } else if(rat>=2400 && rat<=2599){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b>Rating : <span style="color: #ff4800">${rat}</span></b> , Grandmaster</p>
+            `<p>Rating : <b class="text-white bg-danger"> ${rat}</b> , Grandmaster</p>
             <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
              <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
               `
         } else if(rat>=2600 && rat<=2999){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b>Rating : <span style="color: #ff4800">${rat}</span></b> , International Grandmaster</p>
+            `<p>Rating : <b class="text-white bg-danger"> ${rat}</b> , International Grandmaster</p>
             <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
              <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
               `
         } else if(rat>=3000){
             document.querySelector('#rat').innerHTML = 
-            `<p> <b>Rating : <span style="color: #ff4800">${rat}</span></b> , Legendary Grandmaster</p>
+            `<p>Rating : <b class="text-dark bg-danger"> ${rat}</b> , Legendary Grandmaster</p>
             <p> <b>Max Rating : <span style="color: black">${maxRat}</span></b></p>
              <p>Profile Link: <a target="_blank" href="https://codeforces.com/profile/${search}">${search}</a></p>
               `
@@ -95,7 +104,6 @@ form.addEventListener('submit', (e) => {
         fetch('https://codeforces.com/api/user.rating?handle='+search)
         .then(res => res.json())
         .then(data => {
-            // console.log(data.result.length);
         
             var arr = data.result;
             arr[-1]=1500;
@@ -109,7 +117,6 @@ form.addEventListener('submit', (e) => {
                     if(i==0){
                         var chng = arr[i].newRating-arr[i-1];
                     }
-                    console.log(chng)
                     if(chng>=0){
                         var row =`
                         <tr>
