@@ -184,7 +184,7 @@ form.addEventListener('submit', (e) => {
         document.querySelector('.submission').innerHTML = `
         <ul class="list-group">
             <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
-                <b class="">Total SUBs :</b>  
+                <b class="">Total :</b>  
                 <span class="badge badge-primary badge-pill"><strong class="ts">${l}</strong></span>
             </li>
             <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">

@@ -96,5 +96,16 @@ a:hover{
  .submission{
    width: 35%;
  }
+ #piechart{
+  width: 245px;
+  height: 245px;
+ }
+
+
+  /* @media only screen and (max-width: 600px) {
+    #piechart{
+      width: 245px !important;
+    }
+  } */
 
  
