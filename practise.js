@@ -1,11 +1,13 @@
 var press = document.querySelector('#press');
-var bound;
 var solve_cnt = document.querySelector('#solve-count-1');
+var bound;
 
 press.addEventListener('click', ()=>{
 
     var handle = document.querySelector('#handle').value;
-    console.log(handle)
+    var search = document.querySelector('.sel').value;
+
+
 
     var problist = [];
     fetch('https://codeforces.com/api/user.status?handle='+handle)
@@ -15,12 +17,12 @@ press.addEventListener('click', ()=>{
         var len = data.result.length;
         bound = len;
         for(var i = 0; i < len; i++){
-            if(solve[i].verdict=="OK")
+            if(solve[i].verdict=="OK" && solve[i].problem.index === search)
                 problist.push(solve[i].problem.name);
         }    
     })
 
-    var search = document.querySelector('.sel').value;
+    
 
     search = search.toUpperCase();
     fetch('https://codeforces.com/api/problemset.problems')

@@ -147,11 +147,67 @@ form.addEventListener('submit', (e) => {
                 <strong>ERROR!</strong> User not found
             </div>
         `
-        document.querySelector('#about').innerHTML = `
-        <img src="404-error.svg" height="250px" width="250px"
-        />
-        `
+        // document.querySelector('#about').innerHTML = `
+        // <img src="404-error.svg" height="250px" width="250px"
+        // />
+        // `
         document.querySelector('#rat').innerHTML = 
         ``
     })
+
+
+
+    fetch('https://codeforces.com/api/user.status?handle='+search)
+    .then(res => res.json())
+    .then(data => {
+        var l = data.result.length;
+        var ac = 0, tle = 0, rte = 0, wa = 0;
+        for(let i = 0; i<l ; i++){
+            if(data.result[i].verdict === "OK")
+                ac++;
+            if(data.result[i].verdict === "TIME_LIMIT_EXCEEDED")
+                tle++;
+            if(data.result[i].verdict === "RUNTIME_ERROR")
+                rte++;
+            if(data.result[i].verdict === "WRONG_ANSWER")
+                wa++;
+        }
+        // console.log(ac);
+        // document.querySelector('.ac').innerHTML = ac;
+        // document.querySelector('.tle').innerHTML = tle;
+        // document.querySelector('.ts').innerHTML = l;
+        // document.querySelector('.rte').innerHTML = rte;
+        // document.querySelector('.wa').innerHTML = wa;
+
+        document.querySelector('.submission').innerHTML = `
+        <ul class="list-group">
+                    <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+                        <b class="">Total SUBs :</b>  
+                        <span class="badge badge-primary badge-pill"><strong class="ts">${l}</strong></span>
+                      </li>
+                    <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
+                        <b class="">ACs :</b>  
+                      <span class="badge badge-success badge-pill"><strong class="ac">${ac}</strong></span>
+                    </li>
+                    <li class="list-group-item list-group-item-warning d-flex justify-content-between align-items-center">
+                        <b class="">TLEs :</b>
+                      <span class="badge badge-warning badge-pill"><strong class="tle">${tle}</strong></span>
+                    </li>
+                    <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
+                        <b class="">RTEs :</b>
+                      <span class="badge badge-secondary badge-pill"><strong class="rte">${rte}</strong></span>
+                    </li>
+                    <li class="list-group-item list-group-item-danger d-flex justify-content-between align-items-center">
+                        <b class="">WAs :</b>
+                      <span class="badge badge-danger badge-pill"><strong class="wa">${wa}</strong></span>
+                    </li>
+                  </ul>
+        `
+
+    })
 })
+
+
+
+
+
