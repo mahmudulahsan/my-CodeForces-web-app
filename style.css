@@ -97,14 +97,18 @@ a:hover{
    width: 35%;
  }
  #piechart{
-  width: 350px;
-  /* height: 245px; */
+  width: 400px;
+  /* width: 450px; */
+  /* height: 350px; */
+  
+  overflow: hidden;
  }
 
 
   @media only screen and (max-width: 600px) {
     #piechart{
-      width: 200px !important;
+      width: 300px !important;
+      height: 275px !important; 
     }
   }
 
