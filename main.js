@@ -7,7 +7,7 @@ var ac = 0, tle = 0, rte = 0, wa = 0;
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const loadText ="wait a little bit ⌛";
+    const loadText ="⌛";
     document.querySelector('#propic').innerHTML = loadText;
 
     search = document.querySelector('#search').value;
