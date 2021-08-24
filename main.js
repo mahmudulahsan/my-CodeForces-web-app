@@ -228,8 +228,10 @@ form.addEventListener('submit', (e) => {
     ]);
 
     var options = {
-        title: search+' Submissions',
+        title: search+'`s Submissions',
+        fontSize: '14',
         backgroundColor: '#b7b7a4',
+        is3D: true,
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
