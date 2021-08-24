@@ -112,4 +112,17 @@ a:hover{
     }
   }
 
+  @media only screen and (max-width: 600px) {
+    #barchart-index{
+      width: 100px !important;
+      /* height: 275px !important;  */
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    #barchart-rating{
+      width: 100px !important;
+      /* height: 275px !important;  */
+    }
+  }
+
  

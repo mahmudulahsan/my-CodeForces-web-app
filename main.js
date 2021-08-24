@@ -164,22 +164,68 @@ form.addEventListener('submit', (e) => {
         ``
     })
 
-
+    var a_solve=0, b_solve=0,c_solve=0, d_solve=0,e_solve=0, f_solve=0,g_solve=0;
+    var solve_800=0, solve_900=0, solve_1000=0,solve_1100=0, solve_1200=0,solve_1300=0, solve_1400=0,solve_1500=0, solve_1600=0,solve_1700=0, solve_1800=0,solve_1900=0, solve_2000=0,solve_2100=0, solve_2200=0;
 
     fetch('https://codeforces.com/api/user.status?handle='+search)
     .then(res => res.json())
     .then(data => {
         var l = data.result.length;
+        var prob = data.result;
         
         for(let i = 0; i<l ; i++){
-            if(data.result[i].verdict === "OK")
+            if(prob[i].verdict === "OK")
                 ac++;
-            if(data.result[i].verdict === "TIME_LIMIT_EXCEEDED")
+            if(prob[i].verdict === "TIME_LIMIT_EXCEEDED")
                 tle++;
-            if(data.result[i].verdict === "RUNTIME_ERROR")
+            if(prob[i].verdict === "RUNTIME_ERROR")
                 rte++;
-            if(data.result[i].verdict === "WRONG_ANSWER")
+            if(prob[i].verdict === "WRONG_ANSWER")
                 wa++;
+            if(prob[i].verdict === "OK" && prob[i].problem.index ==="A")
+                a_solve++;
+            if(prob[i].verdict === "OK" && (prob[i].problem.index ==="B" || prob[i].problem.index ==="B1" || prob[i].problem.index ==="B2"))
+                b_solve++;
+            if(prob[i].verdict === "OK" && (prob[i].problem.index ==="C" || prob[i].problem.index ==="C1" || prob[i].problem.index ==="C2"))
+                c_solve++;
+            if(prob[i].verdict === "OK" && (prob[i].problem.index ==="D" || prob[i].problem.index ==="D1" || prob[i].problem.index ==="D2"))
+                d_solve++;
+            if(prob[i].verdict === "OK" && (prob[i].problem.index ==="E" || prob[i].problem.index ==="E1" || prob[i].problem.index ==="E2"))
+                e_solve++;
+            if(prob[i].verdict === "OK" && (prob[i].problem.index ==="F" || prob[i].problem.index ==="F1" || prob[i].problem.index ==="F2"))
+                f_solve++;
+            if(prob[i].verdict === "OK" && prob[i].problem.index ==="G")
+                g_solve++;
+            
+
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 800)
+                solve_800++;    
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 900)
+                solve_900++;
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 1000)
+                solve_1000++;
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 1100)
+                solve_1100++;
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 1200)
+                solve_1200++;
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 1300)
+                solve_1300++;
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 1400)
+                solve_1400++;
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 1500)
+                solve_1500++;
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 1600)
+                solve_1600++;
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 1700)
+                solve_1700++;
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 1800)
+                solve_1800++;
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 1900)
+                solve_1900++;
+            if(prob[i].verdict === "OK" && prob[i].problem.rating == 2000)
+                solve_2000++;
+            
+
         }
         // console.log(ac);
         // document.querySelector('.ac').innerHTML = ac;
@@ -239,9 +285,82 @@ form.addEventListener('submit', (e) => {
     chart.draw(data, options);
     }
 
-    // $(window).resize(function(){
-    //     drawChart();
-    // })
+    // Bar Chart Index
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawVisualization);
+    function drawVisualization() {
+      var data = google.visualization.arrayToDataTable([
+        ["Index", "Solved", { role: "style" } ],
+        ["A", a_solve, "#cad2c5"],
+        ["B", b_solve, "#84a98c"],
+        ["C", c_solve, "#52796f"],
+        ["D", d_solve, "#354f52"],
+        ["E", e_solve, "#2f3e46"],
+        ["F", f_solve, "#2b2d42"],
+        ["G", g_solve, "#212529"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Solved Problems By INDEX.",
+        width: 450,
+        height: 300,
+        bar: {groupWidth: "80%"},
+        legend: { position: "none" },
+        backgroundColor: '#8f9186',
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("barchart-index"));
+      chart.draw(view, options);
+  }
+
+  // Bar Chart Rating
+  google.charts.load("current", {packages:['corechart']});
+  google.charts.setOnLoadCallback(drawVisualization2);
+  function drawVisualization2() {
+    var data = google.visualization.arrayToDataTable([
+      ["Rating", "Solved", { role: "style" } ],
+      ["800", solve_800, "#f2e9e4"],
+      ["900", solve_900, "#c9ada7"],
+      ["1000", solve_1000, "#9a8c98"],
+      ["1100", solve_1100, "#e5e4e2"],
+      ["1200", solve_1200, "#4a4e69"],
+      ["1300", solve_1300, "#22223b"],
+      ["1400", solve_1400, "#003049"],
+      ["1500", solve_1500, "#f2e9e4"],
+      ["1600", solve_1600, "#c9ada7"],
+      ["1700", solve_1700, "#9a8c98"],
+      ["1800", solve_1800, "#e5e4e2"],
+      ["1900", solve_1900, "#4a4e69"],
+      ["2000", solve_2000, "#22223b"],
+    ]);
+
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1,
+                     { calc: "stringify",
+                       sourceColumn: 1,
+                       type: "string",
+                       role: "annotation" },
+                     2]);
+
+    var options = {
+      title: "Solved Problems By RATING",
+      width: 450,
+      height: 300,
+      bar: {groupWidth: "80%"},
+      legend: { position: "none" },
+      backgroundColor: '#8f9186',
+      
+    };
+    var chart = new google.visualization.ColumnChart(document.getElementById("barchart-rating"));
+    chart.draw(view, options);
+}
 
     })  
 })
