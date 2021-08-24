@@ -98,7 +98,7 @@ a:hover{
  }
  @media only screen and (max-width: 600px) {
   .submission{
-    width: 90%;
+    width: 100%;
   }
 }
  #piechart{
@@ -122,7 +122,7 @@ a:hover{
 
   @media only screen and (max-width: 600px) {
     #barchart-index{
-      width: 355px !important;
+      width: 357px !important;
     }
   }
 
@@ -132,7 +132,7 @@ a:hover{
   }
   @media only screen and (max-width: 600px) {
     #barchart-rating{
-      width: 355px !important;
+      width: 357px !important;
     }
   } 
 
