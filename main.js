@@ -2,8 +2,6 @@ var form = document.querySelector('#myForm');
 var search;
 var newSearch = 0;
 
-var ac = 0, tle = 0, rte = 0, wa = 0;
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -172,6 +170,7 @@ form.addEventListener('submit', (e) => {
     .then(data => {
         var l = data.result.length;
         var prob = data.result;
+        var ac = 0, tle = 0, rte = 0, wa = 0;
         
         for(let i = 0; i<l ; i++){
             if(prob[i].verdict === "OK")
