@@ -7,7 +7,7 @@ var ac = 0, tle = 0, rte = 0, wa = 0;
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const loadText ="⌛";
+    const loadText = "⌛";
     document.querySelector('#propic').innerHTML = loadText;
 
     search = document.querySelector('#search').value;
@@ -152,7 +152,7 @@ form.addEventListener('submit', (e) => {
     .catch(err => {
         // console.log('Failed');
         document.querySelector('#propic').innerHTML = `
-            <div class="alert alert-danger">
+            <div class="alert alert-danger" style="font-size: 15px !important">
                 <strong>ERROR!</strong> User not found
             </div>
         `
@@ -212,7 +212,7 @@ form.addEventListener('submit', (e) => {
             </li>
         </ul>
         `
-    // Chart
+    // Pie Chart
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
@@ -239,16 +239,12 @@ form.addEventListener('submit', (e) => {
     chart.draw(data, options);
     }
 
-    $(window).resize(function(){
-        drawChart();
-    })
+    // $(window).resize(function(){
+    //     drawChart();
+    // })
 
     })  
 })
-
-
-
- 
 
 
 
