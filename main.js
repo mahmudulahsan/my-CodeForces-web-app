@@ -362,6 +362,12 @@ form.addEventListener('submit', (e) => {
     chart.draw(view, options);
 }
 
+$(window).resize(function(){
+    drawVisualization2();
+    drawVisualization();
+    drawChart();
+  });
+
     })  
 })
 

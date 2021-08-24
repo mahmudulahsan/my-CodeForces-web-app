@@ -104,24 +104,22 @@ a:hover{
   overflow: hidden;
  }
 
-
   @media only screen and (max-width: 600px) {
     #piechart{
       width: 250px !important;
-      /* height: 275px !important;  */
     }
   }
 
   @media only screen and (max-width: 600px) {
     #barchart-index{
-      width: 100px !important;
-      /* height: 275px !important;  */
+      padding: 0;
+      width: 50px !important;
     }
   }
   @media only screen and (max-width: 600px) {
     #barchart-rating{
-      width: 100px !important;
-      /* height: 275px !important;  */
+      padding: 0;
+      width: 50px !important;
     }
   }
 
