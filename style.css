@@ -107,7 +107,7 @@ a:hover{
 
   @media only screen and (max-width: 600px) {
     #piechart{
-      width: 275px !important;
+      width: 250px !important;
       /* height: 275px !important;  */
     }
   }
