@@ -310,8 +310,8 @@ form.addEventListener('submit', (e) => {
 
       var options = {
         title: "Solved Problems By INDEX.",
-        width: 375,
-        height: 250,
+        width: 368,
+        height: 245,
         bar: {groupWidth: "80%"},
         legend: { position: "none" },
         backgroundColor: '#8f9186',
@@ -351,8 +351,8 @@ form.addEventListener('submit', (e) => {
 
     var options = {
       title: "Solved Problems By RATING",
-      width: 375,
-      height: 250,
+      width: 368,
+      height: 245,
       bar: {groupWidth: "80%"},
       legend: { position: "none" },
       backgroundColor: '#8f9186',
