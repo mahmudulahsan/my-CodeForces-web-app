@@ -94,10 +94,15 @@ a:hover{
  }
 
  .submission{
-   width: 75%;
+   width: 84%;
  }
+ @media only screen and (max-width: 600px) {
+  .submission{
+    width: 90%;
+  }
+}
  #piechart{
-  width: 400px;
+  width: 500px;
   /* width: 450px; */
   /* height: 350px; */
   
@@ -110,17 +115,25 @@ a:hover{
     }
   }
 
-  /* @media only screen and (max-width: 600px) {
+  #barchart-index{
+    width: 450px;
+    /* height: 300px; */
+  }
+
+  @media only screen and (max-width: 600px) {
     #barchart-index{
-      padding: 0;
-      width: 50px !important;
+      width: 350px !important;
     }
+  }
+
+  #barchart-rating{
+    width: 450px;
+    /* height: 300px; */
   }
   @media only screen and (max-width: 600px) {
     #barchart-rating{
-      padding: 0;
-      width: 50px !important;
+      width: 350px !important;
     }
-  }  */
+  } 
 
  
