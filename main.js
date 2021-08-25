@@ -10,12 +10,6 @@ document.addEventListener('DOMContentLoaded', () =>{
         `
         <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="search" style="background-color: #52b788; readonly">
         `
-        // document.querySelector('#butt').form.submit();
-
-        // window.onload = function(){
-        //     var button = document.querySelector('#butt');
-        //     button.form.click();
-        // }
         window.onload = function(){
             document.querySelector('#btn-search').click();
         }
@@ -47,6 +41,7 @@ form.addEventListener('submit', (e) => {
         `
         <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="newSearch" style="background-color: #52b788;" readonly>
         `
+        document.querySelector("#success").innerHTML = "Logged in!";
     }
 
 
