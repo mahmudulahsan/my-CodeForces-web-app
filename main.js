@@ -5,10 +5,10 @@ var logout = document.querySelector("#btn-logout");
 
 document.addEventListener('DOMContentLoaded', () =>{
 
-    if(localStorage.getItem("username") !== null ){
+    if(localStorage.getItem("username")){
         document.querySelector('.mahi').innerHTML = 
         `
-        <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="search" style="background-color: #52b788; readonly">
+        <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="search" style="background-color: #52b788;" readonly>
         `
         window.onload = function(){
             document.querySelector('#btn-search').click();

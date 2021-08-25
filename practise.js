@@ -1,11 +1,36 @@
 var press = document.querySelector('#press');
 var solve_cnt = document.querySelector('#solve-count-1');
 var bound;
+var handle;
+
+
+document.addEventListener('DOMContentLoaded', () =>{
+
+    if(localStorage.getItem("username")){
+        document.querySelector('.local-storage-handle-1').innerHTML = 
+        `
+        <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="handle" style="background-color: #52b788;" readonly>
+        `
+    }  
+});
+
+
 
 press.addEventListener('click', ()=>{
 
-    var handle = document.querySelector('#handle').value;
+    handle = document.querySelector('#handle').value;
     var search = document.querySelector('.sel').value;
+
+
+    //Local storage
+    // if(handle){
+    //     localStorage.setItem("username", handle);
+
+    //     document.querySelector('.local-storage-handle-1').innerHTML = 
+    //     `
+    //     <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="handle" style="background-color: #52b788;" readonly>
+    //     `
+    // }
 
 
 

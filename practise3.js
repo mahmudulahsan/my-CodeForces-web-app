@@ -5,9 +5,32 @@ var conlist = [];
 var contest_btn = document.querySelector("#contest-btn");
 
 
+//local storage for handle
+document.addEventListener('DOMContentLoaded', () =>{
+
+    if(localStorage.getItem("username")){
+        document.querySelector('.local-storage-handle-3').innerHTML = 
+        `
+        <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="contest-handle" style="background-color: #52b788;" readonly>
+        `
+    }  
+});
+
+
 contest_btn.addEventListener('click', (e)=>{
 
     var contest_handle = document.querySelector("#contest-handle").value;
+
+
+    //Local storage
+    // if(contest_handle){
+    //     localStorage.setItem("username", contest_handle);
+
+    //     document.querySelector('.local-storage-handle-2').innerHTML = 
+    //     `
+    //     <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="contest_handle" style="background-color: #52b788;" readonly>
+    //     `
+    // }
 
 
     // Fetching user contests

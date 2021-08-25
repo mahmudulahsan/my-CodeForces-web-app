@@ -2,6 +2,17 @@ var bound;
 var get = document.querySelector('#get');
 var solve_count = document.querySelector('#solve-count-2');
 
+
+document.addEventListener('DOMContentLoaded', () =>{
+
+    if(localStorage.getItem("username")){
+        document.querySelector('.local-storage-handle-2').innerHTML = 
+        `
+        <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="handle_2" style="background-color: #52b788;" readonly>
+        `
+    }  
+});
+
 get.addEventListener('click', (e) => {
 
     var lo = document.querySelector('#lo').value;
@@ -9,6 +20,16 @@ get.addEventListener('click', (e) => {
 
     //For Syncing Handle
     var handle_2 = document.querySelector('#handle_2').value;
+
+    //Local storage
+    // if(handle){
+    //     localStorage.setItem("username", handle);
+
+    //     document.querySelector('.local-storage-handle-2').innerHTML = 
+    //     `
+    //     <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="handle_2" style="background-color: #52b788;" readonly>
+    //     `
+    // }
 
     var problist = [];
 
@@ -86,6 +107,8 @@ get.addEventListener('click', (e) => {
               table.innerHTML = output.join(' ')
     })
 })
+
+console.log(localStorage.getItem("username"))
 
 
 
