@@ -94,7 +94,7 @@ a:hover{
  }
 
  .submission{
-   width: 42%;
+   width: 84%;
  }
  @media only screen and (max-width: 600px) {
   .submission{
@@ -123,7 +123,7 @@ a:hover{
   @media only screen and (max-width: 600px) {
     #barchart-index{
       width: 360px !important;
-      height: 240px !important;
+      /* height: 10px !important; */
     }
   }
 
@@ -134,6 +134,7 @@ a:hover{
   @media only screen and (max-width: 600px) {
     #barchart-rating{
       width: 360px !important;
+      /* height: 10px; */
     }
   } 
 
