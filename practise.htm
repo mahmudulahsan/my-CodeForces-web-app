@@ -59,9 +59,9 @@
           <!-- toggleable dynamic tab starts here -->
           <div class="other-section">
               <ul class="nav nav-pills">
-                  <li class="nav-item"><a data-toggle="pill" class="nav-link active font-weight-bold" href="#section_1">Section 1</a></li>
-                  <li class="nav-item"><a data-toggle="pill" class="nav-link font-weight-bold" href="#section_2">Section 2</a></li>
-                  <!-- <li class="nav-item"><a data-toggle="pill" class="nav-link font-weight-bold" href="#section_3">Section 3</a></li> -->
+                  <li class="nav-item"><a data-toggle="pill" class="nav-link active font-weight-bold" href="#section_1">Solve by INDEX</a></li>
+                  <li class="nav-item"><a data-toggle="pill" class="nav-link font-weight-bold" href="#section_2">Solve by RATING</a></li>
+                  <li class="nav-item"><a data-toggle="pill" class="nav-link font-weight-bold" href="#section_3">Solve by CONTEST</a></li>
               </ul>
 
               <style>
@@ -130,16 +130,15 @@
 
 
                   <div id="section_2" class="tab-pane fade">
-          
                       <div class="container">
                         <h3>Handle :</h3>
-                          <input value="" type="text" class="form-control" placeholder="Sync Handle with the problems.." id="handle_2" style="background-color: #8f9186;" required>
+                          <input value="" type="text" class="form-control" placeholder="Sync Handle with the problems.." id="handle_2" style="background-color: #8f9186;">
                           <br>
 
                         <h3>Difficulty :</h3>
 
-                          <input value="" type="number" class="form-control" placeholder="From-" id="lo" style="background-color: #8f9186;" required><br>
-                          <input value="" type="number" class="form-control" placeholder="To-" id="hi" style="background-color: #8f9186;" required><br>
+                          <input value="" type="number" class="form-control" placeholder="From-" id="lo" style="background-color: #8f9186;"><br>
+                          <input value="" type="number" class="form-control" placeholder="To-" id="hi" style="background-color: #8f9186;"><br>
                           
                           <button type="button" class="btn btn-primary" id="get">Get Problems</button>
                           <br><br>
@@ -158,15 +157,34 @@
                             </table>
                         </div>     
                   </div>
-
-
-
-                  <!-- <div id="section_3" class="tab-pane fade">
-                    <p>
-                      3
-                    </p>
-                  </div> -->
               </div>
+
+
+              <!-- section 3 -->
+
+              <div id="section_3" class="tab-pane fade">
+                <div class="container">
+                  <h3>Handle :</h3>
+                          <input value="" type="text" class="form-control" placeholder="Sync Handle with the problems.." id="contest-handle" style="background-color: #8f9186;"><br>
+                          <button type="button" class="btn btn-primary" id="contest-btn">Submit</button><br><br>
+                  <div class="table-responsive">
+                    <table class="table table-stripped table-bordered w-100 table1">
+                        <tr class="bg-dark !important">
+                          <th class="text-white">#</th>
+                          <th class="text-white">Contest</th>
+                          <th class="text-white">Link</th>
+                        </tr>
+                        <tbody class="bg-light" id="myTable3">
+                        </tbody>
+                    </table>
+                </div> 
+                </div>
+              </div>
+
+
+
+
+
           </div>
           <!-- toggleable dynamic tab ends here -->
       </main>
@@ -194,5 +212,6 @@
 
     <script src="practise.js"></script>
     <script src="practise1.js"></script>
+    <script src="practise3.js"></script>
 </body>
 </html>

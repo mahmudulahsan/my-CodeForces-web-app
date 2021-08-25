@@ -9,9 +9,10 @@ get.addEventListener('click', (e) => {
 
     //For Syncing Handle
     var handle_2 = document.querySelector('#handle_2').value;
-    console.log(handle_2)
 
     var problist = [];
+
+    //Fetching user problems
     fetch('https://codeforces.com/api/user.status?handle='+handle_2)
     .then(res => res.json())
     .then(data =>{
@@ -21,12 +22,11 @@ get.addEventListener('click', (e) => {
         for(var i = 0; i < len; i++){
             if(solve[i].verdict=="OK")
                 problist.push(solve[i].problem.name);
-        }
-            
+        }    
     })
 
 
-    //Fetching problems
+    //Fetching all problems
     fetch('https://codeforces.com/api/problemset.problems?')
     .then(res => res.json())
     .then(data => {
