@@ -50,6 +50,7 @@ contest_btn.addEventListener('click', (e)=>{
                     <tr>
                         <td class="bg-dark text-white">${c}</td>
                         <td class="bg-success text-white">${arr[i].name}</td>
+                        <td class="bg-secondary text-white">✔️</td>
                         <td class="bg-info text-white"><a target="_blank" href="https://codeforces.com/contest/${arr[i].id}">Link</a></td>
                     </tr>
                     `
@@ -59,6 +60,7 @@ contest_btn.addEventListener('click', (e)=>{
                         <tr>
                             <td class="bg-dark text-white">${c}</td>
                             <td class="bg-secondary text-white">${arr[i].name}</td>
+                            <td class="bg-secondary text-white">❌</td>
                             <td class="bg-info text-white"><a target="_blank" href="https://codeforces.com/contest/${arr[i].id}">Link</a></td>
                         </tr>
                         `
