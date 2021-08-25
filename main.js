@@ -1,24 +1,54 @@
 var form = document.querySelector('#myForm');
 var search;
 var newSearch = 0;
+var logout = document.querySelector("#btn-logout");
+
+document.addEventListener('DOMContentLoaded', () =>{
+
+    if(localStorage.getItem("username") !== null ){
+        document.querySelector('.mahi').innerHTML = 
+        `
+        <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="search" style="background-color: #52b788; readonly">
+        `
+        // document.querySelector('#butt').form.submit();
+
+        // window.onload = function(){
+        //     var button = document.querySelector('#butt');
+        //     button.form.click();
+        // }
+        window.onload = function(){
+            document.querySelector('#btn-search').click();
+        }
+    }  
+});
+
+logout.addEventListener('click', () => {
+    if(localStorage.getItem("username")){
+        localStorage.clear();
+        location.reload();
+    }
+})
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const loadText = "⌛";
-    document.querySelector('#propic').innerHTML = loadText;
+    // const loadText = "    ⌛";
+    // document.querySelector('#propic').innerHTML = loadText;
 
     search = document.querySelector('#search').value;
 
-    // if(search){
-    //     localStorage.setItem("username", search);
+    // document.querySelector('#search').setAttribute("readonly", "true");
 
-    //     document.querySelector('.mahi').innerHTML += `
-    //     <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="newSearch" style="background-color: #8f9186;" readonly>
-    //     `
-    //     newSearch = 1;
-    //     // localStorage.getItem
-    // }
+    if(search){
+        localStorage.setItem("username", search);
+
+        document.querySelector('.mahi').innerHTML = 
+        `
+        <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="newSearch" style="background-color: #52b788;" readonly>
+        `
+    }
+
 
     fetch('https://codeforces.com/api/user.info?handles='+search)
     .then(res => res.json())
@@ -308,8 +338,9 @@ form.addEventListener('submit', (e) => {
                        2]);
 
       var options = {
-        title: "Solved Problems By INDEX.",
+        title: "Solved Problems By INDEX",
         // width: 368,
+        fontSize: 14,
         height: 300,
         bar: {groupWidth: "80%"},
         legend: { position: "none" },
@@ -350,6 +381,7 @@ form.addEventListener('submit', (e) => {
 
     var options = {
       title: "Solved Problems By RATING",
+      fontSize: 14,
     //   width: 368,
       height: 300,
       bar: {groupWidth: "80%"},
