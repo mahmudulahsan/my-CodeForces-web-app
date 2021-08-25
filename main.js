@@ -41,7 +41,7 @@ form.addEventListener('submit', (e) => {
         `
         <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="newSearch" style="background-color: #52b788;" readonly>
         `
-        document.querySelector("#success").innerHTML = "Logged in!";
+        document.querySelector("#success").innerHTML = "Login Successful !";
     }
 
 
