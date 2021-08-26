@@ -41,7 +41,21 @@ form.addEventListener('submit', (e) => {
         `
         <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="newSearch" style="background-color: #52b788;" readonly>
         `
-        document.querySelector("#success").innerHTML = "Login Successful !";
+        document.querySelector("#success").innerHTML =`
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Hello! ${search}
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <style>
+        .alert{
+            width: 100%;
+            font-size: 15px;
+        }
+      </style>
+        `;
     }
 
 
