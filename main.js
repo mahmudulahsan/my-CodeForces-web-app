@@ -2,6 +2,7 @@ var form = document.querySelector('#myForm');
 var search;
 var newSearch = 0;
 var logout = document.querySelector("#btn-logout");
+// var logout_nav = document.querySelector("#btn-logout-nav");
 
 document.addEventListener('DOMContentLoaded', () =>{
 
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         window.onload = function(){
             document.querySelector('#btn-search').click();
         }
+        logout.style.display = "inline";
     }  
 });
 
@@ -56,6 +58,7 @@ form.addEventListener('submit', (e) => {
         }
       </style>
         `;
+        logout.style.display = "inline";
     }
 
 
@@ -347,7 +350,7 @@ form.addEventListener('submit', (e) => {
                        2]);
 
       var options = {
-        title: "Solved Problems By INDEX",
+        title: search+"` Solved Problems By INDEX",
         // width: 368,
         fontSize: 14,
         height: 300,

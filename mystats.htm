@@ -45,8 +45,20 @@
                     color: #b7b7a4 !important;
                 }
             </style>
-          </li>
+          </li> 
+          <!-- <li class="nav-item ">
+            <button id="btn-logout-nav" class="btn btn-md" style="background-color: #dc3545 !important; display: none; color: white; font-weight: bold;">
+                Logout
+            </button>
+          </li> -->
         </ul>
+        <!-- <ul class="navbar-nav ml-auto pr-5">
+            <li class="nav-item">
+                <button id="btn-logout-nav" class="btn btn-md" style="background-color: #dc3545 !important; display: none; color: white; font-weight: bold;">
+                    Logout
+                </button>
+            </li>
+          </ul> -->
       </nav>
 
     <br>
@@ -56,21 +68,21 @@
             Enter Handle
         </h1>
         <div class="container">
-            <form id="myForm" autocomplete="off">
+            <form id="myForm" autocomplete="off" autocomplete="on">
                 <div class="form-group">
                     
                     <div class="mahi">
-                      <input value="" type="text" class="form-control" placeholder="Handle. Ex-tourist" id="search" style="background-color: #8f9186;" required>
+                      <input value="" type="text" class="form-control" placeholder="Handle. Ex-tourist" id="search" style="background-color: #8f9186;" name="arnob"  required>
                     </div>
                 </div>
                 <div class="form-group from-inline">
                     <button id="btn-search" class="btn btn-md" style="background-color: #007bff !important; color: white; font-weight: bold;">
                         Login
                     </button>
-                    <button id="btn-logout" class="btn btn-md" style="background-color: #dc3545 !important; color: white; font-weight: bold;">
+                    <button id="btn-logout" class="btn btn-md" style="background-color: #dc3545 !important; display: none; color: white; font-weight: bold;">
                         Logout
                     </button>
-                    <label id="success" for="" class="col-sm-2 col-form-label" style="color: #1b4332; font-size: 18px; font-weight: bold;"></label>
+                    <label id="success" class="col-sm-2 col-form-label" style="color: #1b4332; font-size: 18px; font-weight: bold;"></label>
                 </div>
             </form>
             <div class="container">

@@ -2,6 +2,7 @@ var press = document.querySelector('#press');
 var solve_cnt = document.querySelector('#solve-count-1');
 var bound;
 var handle;
+var logout_nav = document.querySelector("#btn-logout-nav");
 
 
 document.addEventListener('DOMContentLoaded', () =>{
@@ -11,8 +12,15 @@ document.addEventListener('DOMContentLoaded', () =>{
         `
         <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="handle" style="background-color: #52b788;" readonly>
         `
+        logout_nav.style.display = "block";
     }  
 });
+logout_nav.addEventListener('click', () => {
+    if(localStorage.getItem("username")){
+        localStorage.clear();
+        location.reload();
+    }
+})
 
 
 
