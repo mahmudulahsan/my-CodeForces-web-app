@@ -12,7 +12,15 @@ document.addEventListener('DOMContentLoaded', () =>{
         `
         <input value="${localStorage.getItem("username")}" type="text" class="form-control" id="handle" style="background-color: #52b788;" readonly>
         `
-        logout_nav.style.display = "block";
+        logout_nav.style.display = "inline";
+        logout_nav.innerHTML = "logout";
+    }
+    else{
+        logout_nav.style.display = "inline";
+        logout_nav.style.backgroundColor = "#007bff"
+        logout_nav.innerHTML = `
+            <a href="mystats.htm">login</>
+        `
     }  
 });
 logout_nav.addEventListener('click', () => {

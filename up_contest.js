@@ -1,4 +1,27 @@
 
+var logout_nav = document.querySelector("#btn-logout-nav");
+
+
+document.addEventListener('DOMContentLoaded', () =>{
+    if(localStorage.getItem("username")){
+        logout_nav.style.display = "inline";
+        logout_nav.innerHTML = "logout";
+    }
+    else{
+        logout_nav.style.display = "inline";
+        logout_nav.style.backgroundColor = "#007bff"
+        logout_nav.innerHTML = `
+            <a href="mystats.htm">login</>
+        `
+    }    
+});
+
+logout_nav.addEventListener('click', () => {
+    if(localStorage.getItem("username")){
+        localStorage.clear();
+        location.reload();
+    }
+})
 
     fetch('https://codeforces.com/api/contest.list?gym=false')
     .then(res => res.json())
