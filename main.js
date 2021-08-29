@@ -350,7 +350,7 @@ form.addEventListener('submit', (e) => {
                        2]);
 
       var options = {
-        title: search+"` Solved Problems By INDEX",
+        title: search+"`s Solved Problems By INDEX",
         // width: 368,
         fontSize: 14,
         height: 300,
@@ -392,7 +392,7 @@ form.addEventListener('submit', (e) => {
                      2]);
 
     var options = {
-      title: "Solved Problems By RATING",
+      title:search+"`s Solved Problems By RATING",
       fontSize: 14,
     //   width: 368,
       height: 300,
