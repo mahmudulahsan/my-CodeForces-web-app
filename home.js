@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         document.querySelector('#welcome').innerHTML = `
         <div class="alert alert-info" role="alert">
             <h4 class="alert-heading">Welcome back!</h4>
-            <p>Happy coding <strong style="font-size: 20px">${localStorage.getItem("username")} </strong>:D</p>
+            <p>Happy coding 👨‍💻, <strong style="font-size: 20px">${localStorage.getItem("username")} </strong>:D</p>
         </div>
         `
         logout.style.display = "inline";
