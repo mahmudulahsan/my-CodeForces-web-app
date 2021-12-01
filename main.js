@@ -66,9 +66,9 @@ form.addEventListener('submit', (e) => {
     .then(res => res.json())
     .then(data => {
         document.querySelector('#propic').innerHTML = `
-            <img src="${data.result[0].titlePhoto}"/>
+            <img id="border-propic" src="${data.result[0].titlePhoto}"/>
             <style>
-                img {
+                #border-propic {
                     border: 5px solid #555;
                 }
             </style>
