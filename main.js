@@ -67,6 +67,11 @@ form.addEventListener('submit', (e) => {
     .then(data => {
         document.querySelector('#propic').innerHTML = `
             <img src="${data.result[0].titlePhoto}"/>
+            <style>
+                img {
+                    border: 5px solid #555;
+                }
+            </style>
         `
         document.querySelector('#about').innerHTML = `
         <p> <b><u>Name</u> :</b> ${data.result[0].firstName} ${data.result[0].lastName} </p>
