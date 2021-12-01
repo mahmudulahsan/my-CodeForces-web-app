@@ -23,6 +23,7 @@
 </head>
 <body>
 
+    <!-- navbar start -->
     <nav class="navbar navbar-expand-sm bg-dark">
         <a class="navbar-brand" href="home.htm"><img src="cf.svg" height="50px", width="50px" alt=""></a>
         <ul class="navbar-nav">
@@ -48,6 +49,7 @@
           </li>
         </ul>
       </nav>
+      <!-- navbar end -->
 
       <br>
 
@@ -59,11 +61,12 @@
       </div>
 
     
-
+    <!-- Main Container Start  -->
     <div class="conatiner"> 
         <h1 style="text-align: center; color: #343a40;" >
             Enter Handle
         </h1>
+        <!-- Input Field Start -->
         <div class="container">
             <form id="myForm" autocomplete="off" autocomplete="on">
                 <div class="form-group">
@@ -72,6 +75,7 @@
                       <input value="" type="text" class="form-control" placeholder="Handle. Ex-tourist" id="search" style="background-color: #8f9186;" name="arnob"  required>
                     </div>
                 </div>
+                <!-- login/logout button start-->
                 <div class="form-group from-inline">
                     <button id="btn-search" class="btn btn-md" style="background-color: #007bff !important; color: white; font-weight: bold;">
                         Login
@@ -81,7 +85,9 @@
                     </button>
                     <label id="success" class="col-sm-2 col-form-label" style="color: #1b4332; font-size: 18px; font-weight: bold;"></label>
                 </div>
+                <!-- login/logout button end-->
             </form>
+            <!-- primary statistics start -->
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -98,52 +104,48 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+            <!-- primary statistics end -->
             <hr style="border-width: 3px;">
-
         </div>
+        <!-- Input Field End -->
 
-        <!-- <div class="container d-flex justify-content-around">
-            <div class="submission">
-            </div>
 
-            <div id="piechart">
-            </div>
-        </div> -->
-
+        <!-- Various submission count and its pie-chart start -->
         <div class="container">
             <div class="row">
+                <!-- submission count -->
                 <div class="col-md">
                     <div class="submission">
                     </div>
                 </div>
+                <!-- its pie-chart -->
                 <div class="col-md pt-4">
                     <div id="piechart">
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Various submission count and its pie chart end -->
        
 
+        <!-- section for Bar-chart start-->
         <div class="container">
             <div class="row">
+                <!-- for index -->
                 <div class="col-md">
                     <div id="barchart-index"></div>
                 </div>
+                <!-- for rating -->
                 <div class="col-md">
                     <div id="barchart-rating"></div>
                 </div>
             </div>
         </div>
-
-        <!-- <div class="container d-flex justify-content-around">
-            <div id="barchart-index"></div>
-            <div id="barchart-rating"></div>
-        </div> -->
-
+        <!-- section for Bar-chart end-->
         
-        
+
+        <!-- Rated contest table start -->
         <div class="container">
           <hr style="border-width: 3px;">
             <h3>Rated Contests</h3>
@@ -161,24 +163,27 @@
                 </table>
             </div>
         </div>
+        <!-- Rated contest table end -->
+
 
     </div>
+    <!-- Main Container end  -->
 
 
     <br><br><br>
 
+    <!-- Footer -->
     <div class="footer">
         <p>Developed by © <a href="https://github.com/mahmudulahsan" target="_blank" style="color: white !important;"> Mahmudul Ahsan</a></p>
     </div>
 
+
+
 <!-- for charts -->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-
 <!-- bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 <!-- my JavaScript -->
 <script src="main.js"></script>
 
