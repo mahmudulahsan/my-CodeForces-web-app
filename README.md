@@ -1,3 +1,3 @@
 My Codeforces
 
-https://mycodeforces.netlify.app/mystats.htm
+https://my-cf-tracker.netlify.app/
